@@ -11,10 +11,8 @@ HF_TOKEN = os.environ.get("HF_TOKEN")
 
 print("Loading model...")
 
-processor = Wav2Vec2Processor.from_pretrained(MODEL_ID,
-    token=HF_TOKEN)
-model = Wav2Vec2ForCTC.from_pretrained(MODEL_ID,
-    token=HF_TOKEN)
+processor = Wav2Vec2Processor.from_pretrained(MODEL_ID)
+model = Wav2Vec2ForCTC.from_pretrained(MODEL_ID)
 
 print("Model loaded.")
 print("HF_TOKEN:", HF_TOKEN)
