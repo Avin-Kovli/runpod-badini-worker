@@ -5,8 +5,9 @@ import librosa
 from transformers import Wav2Vec2Processor, Wav2Vec2ForCTC
 import os
 
-HF_TOKEN = os.environ.get("HF_TOKEN")
+
 MODEL_ID = "BadiniAI/BadiniW2VBert"
+HF_TOKEN = os.environ.get("HF_TOKEN")
 
 print("Loading model...")
 
@@ -16,7 +17,7 @@ model = Wav2Vec2ForCTC.from_pretrained(MODEL_ID,
     token=HF_TOKEN)
 
 print("Model loaded.")
-
+print("HF_TOKEN:", HF_TOKEN)
 def process_audio(audio_bytes):
     with open("temp.wav", "wb") as f:
         f.write(audio_bytes)
