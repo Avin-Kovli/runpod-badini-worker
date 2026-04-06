@@ -3,13 +3,17 @@ import base64
 import torch
 import librosa
 from transformers import Wav2Vec2Processor, Wav2Vec2ForCTC
+import os
 
+HF_TOKEN = os.environ.get("HF_TOKEN")
 MODEL_ID = "BadiniAI/BadiniW2VBert"
 
 print("Loading model...")
 
-processor = Wav2Vec2Processor.from_pretrained(MODEL_ID)
-model = Wav2Vec2ForCTC.from_pretrained(MODEL_ID)
+processor = Wav2Vec2Processor.from_pretrained(MODEL_ID,
+    token=HF_TOKEN)
+model = Wav2Vec2ForCTC.from_pretrained(MODEL_ID,
+    token=HF_TOKEN)
 
 print("Model loaded.")
 
