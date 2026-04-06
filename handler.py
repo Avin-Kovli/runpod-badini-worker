@@ -48,3 +48,5 @@ def handler(job):
 
 
 runpod.serverless.start({"handler": handler})
+
+print("New build trigger")
